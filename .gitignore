@@ -1,0 +1,9 @@
+/dist/
+site*/
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+*.egg-info/
+.venv/
+poetry.lock
+.vscode/

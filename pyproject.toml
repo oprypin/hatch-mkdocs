@@ -1,0 +1,102 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hatch-mkdocs"
+description = "Plugin for Hatch to infer env dependencies from mkdocs.yml"
+readme = "README.md"
+license = "MIT"
+keywords = ["mkdocs"]
+authors = [
+    {name = "Oleh Prypin", email = "oleh@pryp.in"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Framework :: Hatch",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+    "Typing :: Typed",
+]
+dynamic = ["version"]
+requires-python = ">=3.8"
+dependencies = [
+    "hatch >=1.6.0",
+    "mkdocs-get-deps >=0.2.0",
+]
+
+[project.urls]
+Source = "https://github.com/mkdocs/hatch-mkdocs"
+Issues = "https://github.com/mkdocs/hatch-mkdocs/issues"
+History = "https://github.com/mkdocs/hatch-mkdocs/releases"
+
+[project.entry-points.hatch]
+hatch-mkdocs = "hatch_mkdocs.hatch_hooks"
+
+[tool.hatch.version]
+path = "hatch_mkdocs/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = ["/hatch_mkdocs"]
+
+[tool.hatch.envs.default.scripts]
+all = [
+    "hatch run style:fix",
+    "hatch run types:check",
+]
+
+[tool.hatch.envs.types]
+dependencies = [
+    "mypy",
+]
+[tool.hatch.envs.types.scripts]
+check = [
+    "mypy hatch_mkdocs"
+]
+
+[tool.hatch.envs.style]
+skip-install = true
+dependencies = [
+    "ruff",
+]
+[tool.hatch.envs.style.scripts]
+fix = [
+    "ruff check --fix hatch_mkdocs",
+    "format",
+]
+format = [
+    "ruff format -q hatch_mkdocs",
+]
+
+[tool.ruff]
+line-length = 100
+select = [
+    "I",
+    "F", "W", "E", "UP", "YTT", "C4", "DTZ", "FA", "ISC", "PIE", "T20", "RSE", "TCH",
+    "B002", "B003", "B005", "B007", "B009", "B012", "B013", "B014", "B015", "B018", "B020", "B021", "B023", "B026", "B033", "B034", "B905",
+    "COM818",
+    "PERF101",
+    "PGH002", "PGH004", "PGH005",
+    "FLY002",
+    "PLC", "PLE", "PLR0124", "PLR0133", "PLR0206", "PLR0402", "PLR1701", "PLR1722", "PLW0120", "PLW0127", "PLW0129", "PLW0131", "PLW0406", "PLW0602", "PLW0603", "PLW0711",
+    "RUF001", "RUF005", "RUF007", "RUF010", "RUF013", "RUF100", "RUF200",
+    "SIM101", "SIM107", "SIM201", "SIM202", "SIM208", "SIM210", "SIM211", "SIM300", "SIM401", "SIM910",
+]
+ignore = ["E501", "E731"]
+[tool.ruff.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
+
+[tool.mypy]
+warn_unreachable = true
+allow_redefinition = true
