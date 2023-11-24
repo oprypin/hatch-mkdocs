@@ -124,7 +124,9 @@ Removing environment: docs
 
 ## Installation
 
-Just [install Hatch]. Ideally in an isolated way with **`pipx install hatch`**, or just `pip install hatch` as a more well-known way.
+Just [install Hatch]. Ideally in an isolated way with **`pipx install hatch`** (after [installing `pipx`]), or just `pip install hatch` as a more well-known way.
+
+</details>
 
 If you declare `hatch-mkdocs` as a dependency in your Hatch config (`pyproject.toml` or `hatch.toml`) as shown above, Hatch will automatically install it on first use.
 
@@ -190,6 +192,7 @@ Inside `[envs.ENV_NAME]` (which is an ordinary construct in Hatch) you can proce
 [catalog]: https://github.com/mkdocs/catalog
 [Hatch]: https://hatch.pypa.io/
 [install Hatch]: https://hatch.pypa.io/latest/install/#pip
+[installing `pipx`]: https://pypa.github.io/pipx/installation/
 [`dependencies`]: https://hatch.pypa.io/latest/config/environment/overview/#dependencies
 [`scripts`]: https://hatch.pypa.io/latest/config/environment/overview/#scripts
 [`detached`]: https://hatch.pypa.io/latest/config/environment/overview/#detached-environments
