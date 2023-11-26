@@ -3,7 +3,7 @@
 **[Hatch] plugin to integrate [MkDocs] and infer dependencies into an env**
 
 [![PyPI](https://img.shields.io/pypi/v/hatch-mkdocs)](https://pypi.org/project/hatch-mkdocs/)
-[![GitHub](https://img.shields.io/github/license/mkdocs/hatch-mkdocs)](https://github.com/mkdocs/hatch-mkdocs/blob/master/LICENSE.md)
+[![License](https://img.shields.io/github/license/mkdocs/hatch-mkdocs)](https://github.com/mkdocs/hatch-mkdocs/blob/master/LICENSE.md)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mkdocs/hatch-mkdocs/ci.yml.svg)](https://github.com/mkdocs/hatch-mkdocs/actions?query=event%3Apush+branch%3Amaster)
 
 This plugin populates [Hatch] environments with `dependencies` on the fly based on a [`mkdocs.yml`] file.

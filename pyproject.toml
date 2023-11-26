@@ -37,6 +37,7 @@ dependencies = [
 ]
 
 [project.urls]
+Documentation = "https://github.com/mkdocs/hatch-mkdocs#readme"
 Source = "https://github.com/mkdocs/hatch-mkdocs"
 Issues = "https://github.com/mkdocs/hatch-mkdocs/issues"
 History = "https://github.com/mkdocs/hatch-mkdocs/releases"

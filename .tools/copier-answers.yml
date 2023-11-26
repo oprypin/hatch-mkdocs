@@ -1,0 +1,13 @@
+_commit: 7d6f4ceea
+_src_path: gh:oprypin/py-project-template
+copyright_date: '2023'
+mkdocs: false
+mkdocs_install_self: false
+project_description: Hatch plugin to integrate MkDocs and infer dependencies into an env
+project_name: hatch-mkdocs
+pytest: false
+python_distribution_name: hatch-mkdocs
+python_source_path: hatch_mkdocs
+repository_name: mkdocs/hatch-mkdocs
+script_test: false
+
