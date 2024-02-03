@@ -1,12 +1,7 @@
-name: CI
+name: Auto-fix
 on:
   push:
   pull_request:
-  schedule:
-    - cron: '0 6 * * 6'
-defaults:
-  run:
-    shell: bash
 jobs:
   style:
     runs-on: ubuntu-latest
@@ -23,12 +18,12 @@ jobs:
       - name: Install dependencies
         run: |
           hatch run style:pip freeze
-          hatch run types:pip freeze
-      - name: Check style
-        if: always()
+      - name: Fix code style
         run: |
-          hatch run style:check
-      - name: Check types
-        if: always()
+          hatch run style:fix --fix-only
+      - name: Check if any edits are necessary
         run: |
-          hatch run types:check
+          git diff --color --exit-code
+      - name: Apply automatic fixes using pre-commit-ci-lite
+        if: failure() && github.event_name == 'pull_request'
+        uses: pre-commit-ci/lite-action@v1.0.1
