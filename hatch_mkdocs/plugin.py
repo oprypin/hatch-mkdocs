@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from hatch.env.collectors.plugin.interface import EnvironmentCollectorInterface
 from mkdocs_get_deps import get_deps
 

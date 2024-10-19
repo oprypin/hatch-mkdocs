@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from hatchling.plugin import hookimpl
 
 from .plugin import MkDocsEnvironmentCollector
